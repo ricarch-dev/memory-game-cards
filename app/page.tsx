@@ -9,7 +9,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog"
 import Danna from "@/public/assets/images/danna-paola.webp"
 import Danny from "@/public/assets/images/danny-ocean.jpg"
@@ -17,7 +16,7 @@ import Aitana from "@/public/assets/images/aitana.jpg"
 import SamS from "@/public/assets/images/sam smith.avif"
 import Romeo from "@/public/assets/images/romeo santos.jpg"
 import Taylor from "@/public/assets/images/taylor.jpg"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 const characters = [
   { id: 1, name: "Danna Paola", image: Danna },
@@ -29,7 +28,7 @@ const characters = [
 ]
 
 export default function MemoryGame() {
-  const [cards, setCards] = useState<any[]>([])
+  const [cards, setCards] = useState<{ id: number; name: string; image: StaticImageData; uniqueId: number }[]>([])
   const [flipped, setFlipped] = useState<number[]>([])
   const [matched, setMatched] = useState<number[]>([])
   const [moves, setMoves] = useState(0)
