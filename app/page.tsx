@@ -112,8 +112,8 @@ export default function MemoryGame() {
               <div className={`relative w-full h-full ${flipped.includes(index) || matched.includes(index) ? "rotate-y-180" : ""}`}>
                 {flipped.includes(index) || matched.includes(index) ? (
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <Image src={card.image} alt={card.name} className="w-full h-full object-cover rounded-xl" />
-                    <span className="text-black text-xs lg:text-lg font-bold mt-1">{card.name}</span>
+                    <Image src={card.image} alt={card.name} className="w-[80%] h-[80%] object-cover rounded-xl max-h-full" />
+                    <span className="text-black text-xs lg:text-sm font-bold mt-1 text-center">{card.name}</span>
                   </div>
                 ) : (
                   <Brain className="absolute inset-0 flex flex-col m-auto size-20 lg:size-32 items-center justify-center text-white" />
